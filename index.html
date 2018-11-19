@@ -4,37 +4,70 @@
   </head>
   <body>
     <a-scene>
-    	<a-sphere position="0 10 0" radius="10" color="#EF2D5E"></a-sphere>
-    	<a-sphere position="-2 6 -2" radius="1" color="#EF2D5E"></a-sphere>
-    	<a-sphere position="4 6 1" radius="1" color="#EF2D5E"></a-sphere>
-      <a-sphere position="0.2 5 -1.35" radius="1" color="#EF2D5E"></a-sphere>
-    	<a-sphere position="3 3 2" radius="2" color="#EF2D5E"></a-sphere>
-      <a-sphere position="3 3 2" radius="1" color="#EF2D5E"></a-sphere>
+    	<a-sphere position="0 10 0" radius="20" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #membrane; visible: true"
+      event-set__leave="_event: mouseleave; _target: #membrane; visible: false">
+      </a-sphere>
+    <!--
+    	<a-sphere position="-2 6 -2" radius="1" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #vacuole; visible: true"
+      event-set__leave="_event: mouseleave; _target: #vacuole; visible: false">
+      </a-sphere>
+    	<a-sphere position="4 6 1" radius="1" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #vacuole2; visible: true"
+      event-set__leave="_event: mouseleave; _target: #vacuole2; visible: false">
+      </a-sphere>
+      <a-sphere position="0.2 5 -1.35" radius="1" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #ga; visible: true"
+      event-set__leave="_event: mouseleave; _target: #ga; visible: false">
+      </a-sphere>
+    	<a-sphere position="3 3 2" radius="2" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #nucleus; visible: true"
+      event-set__leave="_event: mouseleave; _target: #nucleus; visible: false">
+      </a-sphere>
+      <a-sphere position="3 3 2" radius="1" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #nucleolus; visible: true"
+      event-set__leave="_event: mouseleave; _target: #nucleolus; visible: false">
+      </a-sphere>
       <a-sphere position="-2 3 1" radius="0.5" color="#EF2D5E"></a-sphere>
-      <a-sphere position="-4 2 1" radius="0.5" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="0 3 1" radius="0.5" color="#EF2D5E" height="2" rotation="0 90 90"></a-cylinder>
-      <a-cylinder position="-3 3 1" radius="0.5" color="#EF2D5E" height="2" rotation="0 0 90"></a-cylinder>
-      <a-text value="Cell Membrane" position="-18 6 9" scale="10 10 10" color="#FFFFFF"></a-text>
-      <a-text value="Vesticle" position="-4 2 1.8" scale="2 2 2" color="#FFFFFF" rotation="0 45 0"></a-text>
-      <a-text value="This is a packed unit of materials" position="-4 1.5 1.8" scale="1 1 1" color="#FFFFFF" rotation="0 45 0"></a-text>
-      <a-text value="Nucleus" position="0.2 3.2 2.4" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text>
-      <a-text value="This is where the DNA is stored" position="0.2 2.5 2.4" scale="1 1 1" color="#FFFFFF" rotation="0 -45 0"></a-text>
+      <a-sphere position="-4 2 1" radius="0.5" color="#EF2D5E"
+      event-set__enter="_event: mouseenter; _target: #vesticle; visible: true"
+      event-set__leave="_event: mouseleave; _target: #vesticle; visible: false">
+      </a-sphere>
+      <a-cylinder position="0 3 1" radius="0.5" color="#EF2D5E" height="2" rotation="0 90 90"
+      event-set__enter="_event: mouseenter; _target: #er; visible: true"
+      event-set__leave="_event: mouseleave; _target: #er; visible: false">
+      </a-cylinder>
+      <a-cylinder position="-3 3 1" radius="0.5" color="#EF2D5E" height="2" rotation="0 0 90"
+      event-set__enter="_event: mouseenter; _target: #mitochondria; visible: true"
+      event-set__leave="_event: mouseleave; _target: #mitochondria; visible: false">
+    </a-cylinder>-->
+
+      <a-text id="membrane" visible = "false" value="Cell Membrane" position="-18 6 9" scale="10 10 10" color="#FFFFFF"></a-text>
+      <!--
+      <a-text id="vesticle" visible = "false" value="Vesticle" position="-4 2 1.8" scale="2 2 2" color="#FFFFFF" rotation="0 45 0"></a-text>
+      <a-text id="vesticle" visible = "false" value="This is a packed unit of materials" position="-4 1.5 1.8" scale="1 1 1" color="#FFFFFF" rotation="0 45 0"></a-text>
+      <a-text id="nucleus" visible = "false" value="Nucleus" position="0.2 3.2 2.4" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text>
+      <a-text id="nucleus" visible = "false" value="This is where the DNA is stored" position="0.2 2.5 2.4" scale="1 1 1" color="#FFFFFF" rotation="0 -45 0"></a-text>
       <a-text value="Cytoplasm" position="0 0.6 0" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="This is the jelly-like filler substance" position="0 1 0" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="Nucleolus" position="1.8 1.5 1.5" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text> 
-      <a-text value="Mitochrondria" position="-4 3 1.5" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="This makes power for the cell" position="-4 2.5 1.5" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="Smooth/Rough ER" position="-0.7 3 0" scale="2 2 2" color="#FFFFFF" rotation="0 -90 0"></a-text>
-      <a-text value="This is the highway of the cell" position="-0.7 2.5 0" scale="1 1 1" color="#FFFFFF" rotation="0 -90 0"></a-text>
-      <a-text value="Golgi Apparatus" position="-1 4.8 -0.35" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="This is the packing area of the cell" position="-1 4.3 -0.35" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="Vacuole" position="-2.7 6 -1" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="This is the storage area of the cell" position="-4 5.5 -1" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
-      <a-text value="Vacuole" position="2.7 6 1.2" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text>
-      <a-text value="This is the storage area of the cell" position="2.7 5.5 1.2" scale="1 1 1" color="#FFFFFF" rotation="0 -45 0"></a-text>
-      <a-text value="Cell Membrane" position="-5 6.5 9" scale="10 10 10" color="#FFFFFF" rotation="180 0 180"></a-text>
+      <a-text id="cytoplasm" visible = "false" value="This is the jelly-like filler substance" position="0 1 0" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="nucleolus" visible = "false" value="Nucleolus" position="1.8 1.5 1.5" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text>
+      <a-text id="mitochondria" visible = "false" value="Mitochrondria" position="-4 3 1.5" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="mitochondria" visible = "false" value="This makes power for the cell" position="-4 2.5 1.5" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="er" visible = "false" value="Smooth/Rough ER" position="-0.7 3 0" scale="2 2 2" color="#FFFFFF" rotation="0 -90 0"></a-text>
+      <a-text id="er" visible = "false" value="This is the highway of the cell" position="-0.7 2.5 0" scale="1 1 1" color="#FFFFFF" rotation="0 -90 0"></a-text>
+      <a-text id="ga" visible = "false" value="Golgi Apparatus" position="-1 4.8 -0.35" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="ga" visible = "false" value="This is the packing area of the cell" position="-1 4.3 -0.35" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="vacuole" visible = "false" value="Vacuole" position="-2.7 6 -1" scale="2 2 2" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="vacuole" visible = "false" value="This is the storage area of the cell" position="-4 5.5 -1" scale="1 1 1" color="#FFFFFF" rotation="0 0 0"></a-text>
+      <a-text id="vacuole2" visible = "false" value="Vacuole" position="2.7 6 1.2" scale="2 2 2" color="#FFFFFF" rotation="0 -45 0"></a-text>
+      <a-text id="vacuole2" visible = "false" value="This is the storage area of the cell" position="2.7 5.5 1.2" scale="1 1 1" color="#FFFFFF" rotation="0 -45 0"></a-text>
+      <a-text id="membrane" visible = "false" value="Cell Membrane" position="-5 6.5 9" scale="10 10 10" color="#FFFFFF" rotation="180 0 180"></a-text>
+    -->
       <a-sky color="#000000"></a-sky>
+      <a-camera>
+          <a-cursor></a-cursor>
+      </a-camera>
    	</a-scene>
   </body>
 </html>
-
